@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <script type="text/javascript" th:src="@{js/lib/main.js}"></script>
+
+</head>
+<body>
+<h1>Tasks</h1>
+<br>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+<table id="myTable" border="1">
+    <tr>
+        <th>Name</th>
+        <th>Creation date</th>
+        <th>Last modification date</th>
+        <th>Status</th>
+        <th>User id</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="task : ${tasks}">
+        <td th:text="${task.name}">1</td>
+        <td th:text="${task.updatedAt}">  </td>
+        <td th:text="${task.createdAt}">  </td>
+        <td th:text="${task.taskStatus}">  </td>
+        <td th:text="${task.userId}">  </td>
+        <td th:text="${task.description}">  </td>
+    </tr>
+    <table>
+</body>
+</html>
